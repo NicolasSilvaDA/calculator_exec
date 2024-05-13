@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
+from PySide6.QtGui import QIcon
 
 
 class MainWindow(QMainWindow):
@@ -14,7 +15,11 @@ class MainWindow(QMainWindow):
         # set title
         self.setWindowTitle('Calculator')
 
-    def adjustFixedSize(self):
+    def adjust_fixed_size(self) -> None:
         # adjustments for screen size
         self.adjustSize()
         self.setFixedSize(self.width(), self.height())
+
+    def add_widget_to_layout(self, widget: QWidget) -> None:
+        self.wlayout.addWidget(widget)
+        self.adjust_fixed_size()
